@@ -1,4 +1,6 @@
-class User{
+//Un constructor, tiene como objetivo dar un estado inicial al objeto. Todas las clases tienen uno, especifiquemos o no nosotros uno.
+
+class User {
   constructor(name, password, profile) {
     this.name = name;
     this.password = password;
@@ -6,7 +8,9 @@ class User{
   }
 
   greet() {
-    document.write(`Hi, my name is ${this.name} and my profile is ${this.profile} </br>`);
+    document.write(
+      `Hi, my name is ${this.name} and my profile is ${this.profile} </br>`
+    );
   }
 
   login() {
@@ -16,7 +20,6 @@ class User{
     return "I am logging out";
   }
 }
-
 
 class Student extends User {
   constructor(name, password, profile, curse) {
