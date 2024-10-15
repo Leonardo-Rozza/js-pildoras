@@ -7,6 +7,34 @@
   </head>
   <body>
     <h1>Básicos JS</h1>
-    <script src="/js/06-clases/06-ejercicio01.js"></script>
+
+    <input type="number" id="cuadroTexto" placeholder="Ingrese el monto" />
+    <button type="submit" id="btnCuadroTexto">Calcular</button>
+
+    <p>IVA:</p>
+    <div id="iva" style="display: inline"></div>
+    <p>IRPF:</p>
+    <div id="irpf" style="display: inline"></div>
+    <p>TOTAL:</p>
+    <div id="total" style="display: inline"></div>
+    <script type="module">
+      import {
+        calculoIva,
+        calculoIrpf,
+        calculoTotal,
+      } from "./js/07-modulos/01-modularizacion-basica.js";
+
+      let $cuadroTexto = document.querySelector("#cuadroTexto");
+      let $btnCuadroTexto = document.querySelector("#btnCuadroTexto");
+      let $divTotal = document.querySelector("#total");
+      let $divIva = document.querySelector("#iva");
+      let $divIrpf = document.querySelector("#irpf");
+
+      $btnCuadroTexto.addEventListener("click", () => {
+        $divIva.innerHTML = calculoIva($cuadroTexto.value);
+        $divIrpf.innerHTML = calculoIrpf($cuadroTexto.value);
+        $divTotal.innerHTML = calculoTotal($cuadroTexto.value);
+      });
+    </script>
   </body>
 </html>
